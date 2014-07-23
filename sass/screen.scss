@@ -8,6 +8,8 @@
 @import "variables";
 @import "mixins";
 
+// @include edit();
+
 body {
   background: $bf_dark;
 }
@@ -36,8 +38,7 @@ h3 {
 }
 
 #page {
-  width: 960px;
-  margin: 0 auto;
+  @include center(960px);
   .above-header {
     padding: 12px;
     nav {
@@ -72,15 +73,11 @@ header {
 }
 
 #content {
-  width: 50%;
-  float: left;
-  margin-right: 3%;
+    @include col(2/4);
 }
 
 .content-center {
-  width: 20%;
-  float: left;
-  margin-right: 3%;
+  @include col(1/4);
   ul {
     font-size: 14px;
     li {
@@ -90,8 +87,7 @@ header {
 }
 
 .content-right {
-  width: 20%;
-  float: left;
+  @include col(1/4);
   article {
     margin-bottom: 24px;
   }

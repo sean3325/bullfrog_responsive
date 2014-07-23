@@ -102,8 +102,22 @@ h3 {
 }
 
 #page {
-  width: 960px;
-  margin: 0 auto;
+  *zoom: 1;
+  width: auto;
+  max-width: 960px;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+#page:before, #page:after {
+  content: '';
+  display: table;
+}
+#page:after {
+  clear: both;
 }
 #page .above-header {
   padding: 12px;
@@ -139,15 +153,47 @@ header .logo a {
 }
 
 #content {
-  width: 50%;
+  *zoom: 1;
   float: left;
+  clear: none;
+  text-align: inherit;
+  padding-left: 0;
+  padding-right: 0;
+  width: 48.5%;
+  margin-left: 0%;
   margin-right: 3%;
+}
+#content:before, #content:after {
+  content: '';
+  display: table;
+}
+#content:after {
+  clear: both;
+}
+#content:last-child {
+  margin-right: 0%;
 }
 
 .content-center {
-  width: 20%;
+  *zoom: 1;
   float: left;
+  clear: none;
+  text-align: inherit;
+  padding-left: 0;
+  padding-right: 0;
+  width: 22.75%;
+  margin-left: 0%;
   margin-right: 3%;
+}
+.content-center:before, .content-center:after {
+  content: '';
+  display: table;
+}
+.content-center:after {
+  clear: both;
+}
+.content-center:last-child {
+  margin-right: 0%;
 }
 .content-center ul {
   font-size: 14px;
@@ -157,8 +203,25 @@ header .logo a {
 }
 
 .content-right {
-  width: 20%;
+  *zoom: 1;
   float: left;
+  clear: none;
+  text-align: inherit;
+  padding-left: 0;
+  padding-right: 0;
+  width: 22.75%;
+  margin-left: 0%;
+  margin-right: 3%;
+}
+.content-right:before, .content-right:after {
+  content: '';
+  display: table;
+}
+.content-right:after {
+  clear: both;
+}
+.content-right:last-child {
+  margin-right: 0%;
 }
 .content-right article {
   margin-bottom: 24px;
