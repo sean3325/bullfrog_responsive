@@ -4,8 +4,101 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
 @import "compass/reset";
+@import "compass";
 @import "variables";
+@import "mixins";
+
+body {
+  background: $bf_dark;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @include bullfrog-headers;
+}
+
+a:link {
+  @include hover-link;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  line-height: 1.25;
+}
+
+h3 {
+  @extend h2;
+  margin-bottom: 0;
+}
+
+#page {
+  width: 960px;
+  margin: 0 auto;
+  .above-header {
+    padding: 12px;
+    nav {
+      a:link {
+        color: white;
+        padding: 0 12px;
+      }
+    }
+  }
+}
 
 header {
-  background: $bf_green;
+  padding: 48px 24px;
+  background: $bf_green url(../images/bullfrog-header.png) no-repeat right;
+  .logo a{
+    color: white;
+    font-size: 72px;
+  }
+}
+
+#content-wrap {
+  background: white;
+  padding: 24px;
+  @include bullfrog-font;
+  @include clearfix;
+  p {
+    margin: 12px 0;
+  }
+  a:link {
+    color: $bf_green;
+  }
+}
+
+#content {
+  width: 50%;
+  float: left;
+  margin-right: 3%;
+}
+
+.content-center {
+  width: 20%;
+  float: left;
+  margin-right: 3%;
+  ul {
+    font-size: 14px;
+    li {
+      margin-bottom: 12px;
+    }
+  }
+}
+
+.content-right {
+  width: 20%;
+  float: left;
+  article {
+    margin-bottom: 24px;
+  }
+}
+
+footer {
+  color: white;
+  clear: both;
+  padding: 24px;
 }
