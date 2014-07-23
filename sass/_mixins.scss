@@ -1,0 +1,10 @@
+@mixin bullfrog-font {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  color: grey;
+}
+
+@mixin bullfrog-headers {
+  color: $bf_green;
+  font-family: Georgia, Times, "Times New Roman", serif;
+}
