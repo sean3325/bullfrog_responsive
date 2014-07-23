@@ -2,6 +2,19 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/*  Syntax Quick Reference
+  --------------------------
+  column($ratios: 1, $offset: 0, $cycle: 0, $uncycle: 0, $gutter: $jeet-gutter)
+  span($ratio: 1, $offset: 0)
+  shift($ratios: 0, $col_or_span: column, $gutter: $jeet-gutter)
+  unshift()
+  edit()
+  center($max_width: 1410px, $pad: 0)
+  stack($pad: 0, $align: false)
+  unstack()
+  align($direction: both)
+  cf()
+*/
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
