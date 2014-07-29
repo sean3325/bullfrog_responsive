@@ -158,6 +158,10 @@ section.content-right:last-child {
   }
 }
 
+img {
+  max-width: 100%;
+}
+
 h2, section.content-right h3 {
   font-size: 20px;
   color: #668134;
