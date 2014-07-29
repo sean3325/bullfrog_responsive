@@ -3,9 +3,8 @@ $froggreen: #668134;
 $frogblack: #000000;
 $frogsans: Arial, "Helvetica Neue", Helvetica, sans-serif;
 
+// create $breakpoint variables like so
+// assume min-width (by default) if only a number
 $breakpoint-small-width: max-width 400px;
-$breakpoint-med-small-width: 400px 650px;
-$breakpoint-medmax-width: max-width 600px;
-$breakpoint-medium-width: max-width 800px;
+$breakpoint-medium-width: max-width 768px;
 $breakpoint-large-width: max-width 1111px;
-$breakpoint-full-width: max-width 1200px;
