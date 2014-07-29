@@ -2,99 +2,146 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
 @import "../jeet/index";
 @import "compass/reset";
 @import "compass";
 @import "variables";
-@import "mixins";
+@import "breakpoint";
 
-// @include edit();
-
-body {
-  background: $bf_dark;
+// Mixins
+@mixin froglinks($color) {
+  display: block;
+  color: $color;
+  text-decoration: none;
+  margin-bottom: 24px;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
-h1, h2, h3, h4, h5, h6 {
-  @include bullfrog-headers;
+// Placeholder selectors
+%quarter-col {
+  @include col(1/4);
+  @include box-sizing(border-box);
+  // margin: 0 24px;
+  // width: 267px;
+  // float: left;
+  @include breakpoint ($breakpoint-medium-width) {
+    @include col(2/4);
+  }
+  @include breakpoint($breakpoint-small-width) {
+    @include col(1/1);
+    padding: 24px;
+  }
 }
 
-a:link {
-  @include hover-link;
-}
-
-h1 {
-  font-size: 32px;
-}
-
+// Main styles
 h2 {
   font-size: 20px;
-  margin-bottom: 20px;
-  line-height: 1.25;
+  color: $froggreen;
+  margin: 24px 0;
 }
 
-h3 {
-  @extend h2;
-  margin-bottom: 0;
+.above-header {
+  background: $frogblack;
 }
 
 #page {
-  @include center(960px);
-  .above-header {
-    padding: 12px;
-    nav {
-      a:link {
-        color: white;
-        padding: 0 12px;
+  @include center(1224px);
+  // max-width: 1225px;
+  // margin: 0 auto;
+}
+
+#main-nav {
+  a {
+    color: white;
+    text-decoration: none;
+    line-height: 40px;
+    font-size: 14px;
+    padding: 0 24px 0 24px;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+header#top {
+  padding: 50px 24px;
+  background: $froggreen url("../images/bullfrog-header.png") no-repeat right center;
+  margin-bottom: 48px;
+  @include breakpoint($breakpoint-medium-width) {
+    margin-bottom: 0;
+  }
+  .logo a {
+    font-size: 72px;
+    color: white;
+    text-decoration: none;
+  }
+}
+
+#content {
+  @include col(2/4);
+  @include box-sizing(border-box);
+  // width: 578px;
+  // float: left;
+  @include breakpoint ($breakpoint-medium-width) {
+    @include col(2/4);
+  }
+  @include breakpoint($breakpoint-medium-width) {
+    @include col(1/1);
+    padding: 24px;
+  }
+}
+
+article {
+  font-size: 16px;
+  line-height: 27px;
+  h1 {
+    font-size: 36px;
+    color: $froggreen;
+    margin: 24px 0;
+  }
+  p {
+    font-family: $frogsans;
+  }
+}
+
+section.content-center,
+section.content-right {
+  @extend %quarter-col;
+  a {
+    @include froglinks($froggreen);
+  }
+}
+
+section.content-center {
+  ul {
+    font-family: $frogsans;
+    li {
+      a {
+        @include froglinks($froggreen);
       }
     }
   }
 }
 
-header {
-  padding: 48px 24px;
-  background: $bf_green url(../images/bullfrog-header.png) no-repeat right;
-  .logo a{
-    color: white;
-    font-size: 72px;
-  }
-}
-
-#content-wrap {
-  background: white;
-  padding: 24px;
-  @include bullfrog-font;
-  @include clearfix;
-  p {
-    margin: 12px 0;
-  }
-  a:link {
-    color: $bf_green;
-  }
-}
-
-#content {
-    @include col(2/4);
-}
-
-.content-center {
-  @include col(1/4);
-  ul {
-    font-size: 14px;
-    li {
-      margin-bottom: 12px;
+section.content-right {
+  article {
+    p {
+      font-size: 14px;
+      line-height: 20px;
     }
   }
-}
-
-.content-right {
-  @include col(1/4);
-  article {
-    margin-bottom: 24px;
+  h3 {
+    @extend h2;
+    margin-bottom: 12px;
   }
 }
 
 footer {
-  color: white;
   clear: both;
-  padding: 24px;
+  background: $frogblack;
+  padding: 20px;
+  color: white;
 }
