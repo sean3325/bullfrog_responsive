@@ -100,7 +100,7 @@ section.content-center:last-child,
 section.content-right:last-child {
   margin-right: 0%;
 }
-@media (max-width: 800px) {
+@media (max-width: 768px) {
   section.content-center,
   section.content-right {
     *zoom: 1;
@@ -203,7 +203,7 @@ header#top {
   background: #668134 url("../images/bullfrog-header.png") no-repeat right center;
   margin-bottom: 48px;
 }
-@media (max-width: 800px) {
+@media (max-width: 768px) {
   header#top {
     margin-bottom: 0;
   }
@@ -238,7 +238,7 @@ header#top .logo a {
 #content:last-child {
   margin-right: 0%;
 }
-@media (max-width: 800px) {
+@media (max-width: 768px) {
   #content {
     *zoom: 1;
     float: left;
@@ -261,7 +261,7 @@ header#top .logo a {
     margin-right: 0%;
   }
 }
-@media (max-width: 800px) {
+@media (max-width: 768px) {
   #content {
     *zoom: 1;
     float: left;
